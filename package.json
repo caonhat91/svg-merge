@@ -1,0 +1,15 @@
+{
+  "name": "svg-merge",
+  "version": "1.0.0",
+  "description": "SVG Optimizer and SVG Store to one file",
+  "scripts": {
+    "start": "grunt"
+  },
+  "author": "NhatNC",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-svgmin": "^6.0.1",
+    "grunt-svgstore": "^2.0.0"
+  }
+}
