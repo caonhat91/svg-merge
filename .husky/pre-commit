@@ -3,8 +3,8 @@
 
 echo "WARNING: pre-commit hook, validate branch and commit message"
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-PREFIX_BRANCH="feature|fix|hotfix|alpha|staging|release"
-REGEX="^($PREFIX_BRANCH)*"
+PREFIX_BRANCH="feature|fix|hotfix|alpha|staging|uat|release"
+REGEX="^(feature|fix|hotfix|alpha|staging|uat|release)*"
 
 if ! [[ $BRANCH =~ $REGEX ]]; then
     echo "Please rename your branch with '($PREFIX_BRANCH)/<msg>' syntax"
