@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "WARNING: prepare-commit-msg hook, validate commit message"
+echo "HOOK -> prepare-commit-msg: Validate commit message"
 
 COMMIT_MSG=$(cat "$1")
 PREFIX_MSG="feat|feature|fix|hotfix"
