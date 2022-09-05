@@ -2,8 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 echo "WARNING: prepare-commit-msg hook, validate msg"
-COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$1")
 COMMIT_SOURCE=$2
 
-    msgHint=$(cat "$COMMIT_MSG_FILE")
-    echo "$msgHint"
+echo "$COMMIT_MSG"
