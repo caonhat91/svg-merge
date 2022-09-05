@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "WARNING: pre-commit hook"
+echo "WARNING: pre-commit hook, format all file changed"
 npx lint-staged
