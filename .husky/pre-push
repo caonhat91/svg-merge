@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 echo "WARNING: pre push hook"
-git pull uat
+git pull origin uat
