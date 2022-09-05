@@ -4,6 +4,9 @@
 echo "WARNING: prepare-commit-msg hook, validate msg"
 COMMIT_MSG_FILE=$1
 COMMIT_SOURCE=$2
-SHA1=$3
 
-echo "$1, $2, $3, $4, $COMMIT_MSG_FILE, $COMMIT_SOURCE"
+if [[ -z "$COMMIT_SOURCE" ]]
+then
+    msgHint=$(cat "$COMMIT_MSG_FILE")
+    echo "$msgHint"
+fi
