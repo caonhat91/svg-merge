@@ -2,4 +2,3 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 echo "WARNING: commit-msg hook"
-exit 0;
