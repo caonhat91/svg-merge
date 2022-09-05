@@ -4,5 +4,6 @@
 echo "WARNING: prepare-commit-msg hook, validate msg"
 COMMIT_MSG=$(cat "$1")
 COMMIT_SOURCE=$2
+commitmsg="$(git rev-parse --git-path hooks/commit-msg)"
 
-echo "$COMMIT_MSG"
+echo "$COMMIT_MSG, $commitmsg"
