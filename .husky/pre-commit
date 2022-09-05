@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "HOOK -> pre-commit: Validate branch name"
+# echo "HOOK -> pre-commit: Validate branch name"
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 PREFIX_BRANCH="feature|fix|hotfix|alpha|staging|uat|release"

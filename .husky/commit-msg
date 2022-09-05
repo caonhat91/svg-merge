@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "HOOK -> commit-msg: Format all file changed"
+# echo "HOOK -> commit-msg: Format all file changed"
+
 npx lint-staged
