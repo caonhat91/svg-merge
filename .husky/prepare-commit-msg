@@ -4,7 +4,5 @@
 echo "WARNING: prepare-commit-msg hook, validate msg"
 COMMIT_MSG=$(cat "$1")
 COMMIT_SOURCE=$2
-. git-sh-setup
-precommit="$(git rev-parse --git-path hooks/pre-commit)"
-test -x "$precommit" && exec "$precommit" ${1+"$@"}
-:
+head="$(git rev-parse --verify HEAD)"
+echo "$head"
