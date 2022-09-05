@@ -1,37 +1,37 @@
 module.exports = function (grunt) {
-    var target = grunt.option('target');
+    var target = grunt.option("target");
 
     grunt.initConfig({
         svgmin: {
             options: {
                 plugins: [
                     {
-                        removeViewBox: false
+                        removeViewBox: false,
                     },
                     {
-                        removeDimensions: true
+                        removeDimensions: true,
                     },
                     {
                         removeAttrs: {
-                            attrs: [
-                                '(fill|stroke)'
-                            ]
-                        }
-                    }
-                ]
+                            attrs: ["(fill|stroke)"],
+                        },
+                    },
+                ],
             },
             dist: {
-                files: [{
-					expand: true,
-					cwd: target,
-					src: ['*.svg'],
-					dest: 'dist/svg/'
-				}]
-            }
+                files: [
+                    {
+                        expand: true,
+                        cwd: target,
+                        src: ["*.svg"],
+                        dest: "dist/svg/",
+                    },
+                ],
+            },
         },
         svgstore: {
             options: {
-                prefix: '',
+                prefix: "",
                 includedemo: `<!doctype html>
                 <html>
                   <head>
@@ -60,26 +60,25 @@ module.exports = function (grunt) {
                   </body>
                 </html>`,
                 svg: {
-                    viewBox: '0 0 100 100',
-                    xmlns: 'http://www.w3.org/2000/svg'
+                    viewBox: "0 0 100 100",
+                    xmlns: "http://www.w3.org/2000/svg",
                 },
                 symbol: {
-                    viewBox: '0 0 24 24'
+                    viewBox: "0 0 24 24",
                 },
-                cleanup: true
+                cleanup: true,
             },
             default: {
                 files: {
-                    'dist/symbol-defs.svg': ['./dist/svg/*.svg'],
+                    "dist/symbol-defs.svg": ["./dist/svg/*.svg"],
                 },
-            }
-        }
+            },
+        },
     });
 
-    grunt.loadNpmTasks('grunt-svgstore');
-    grunt.loadNpmTasks('grunt-svgmin');
+    grunt.loadNpmTasks("grunt-svgstore");
+    grunt.loadNpmTasks("grunt-svgmin");
 
-    grunt.registerTask('default', ['svgmin', 'svgstore']);
+    grunt.registerTask("default", ["svgmin", "svgstore"]);
     // grunt.registerTask('default', ['svgmin']);
-
 };

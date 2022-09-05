@@ -1,0 +1,7 @@
+**/.git
+**/.svn
+**/dist
+**/node_modules
+
+
+**/svg

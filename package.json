@@ -1,15 +1,22 @@
 {
-  "name": "svg-merge",
-  "version": "1.0.0",
-  "description": "SVG Optimizer and SVG Store to one file",
-  "scripts": {
-    "start": "grunt"
-  },
-  "author": "NhatNC",
-  "license": "ISC",
-  "devDependencies": {
-    "grunt": "^1.4.1",
-    "grunt-svgmin": "^6.0.1",
-    "grunt-svgstore": "^2.0.0"
-  }
+    "name": "svg-merge",
+    "version": "1.0.0",
+    "description": "SVG Optimizer and SVG Store to one file",
+    "scripts": {
+        "start": "grunt",
+        "prepare": "husky install"
+    },
+    "author": "NhatNC",
+    "license": "ISC",
+    "devDependencies": {
+        "grunt": "^1.4.1",
+        "grunt-svgmin": "^6.0.1",
+        "grunt-svgstore": "^2.0.0",
+        "husky": "^8.0.1",
+        "lint-staged": "^13.0.3",
+        "prettier": "2.7.1"
+    },
+    "lint-staged": {
+        "**/*": "prettier --check --ignore-unknown"
+    }
 }
