@@ -1,14 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "WARNING: prepare-commit-msg hook, validate msg"
-COMMIT_MSG=$(cat "$1")
-COMMIT_SOURCE=$2
-
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
-REGEX="^(feature|fix|hotfix)\/\w+$"
-
-if ! [[ $BRANCH =~ $REGEX ]]; then
-    echo $branchName
-fi
-echo $COMMIT_MSG
+echo "WARNING: prepare-commit-msg hook, format all file changed"
+npx lint-staged
