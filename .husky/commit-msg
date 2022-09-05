@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "WARNING: prepare-commit-msg hook, format all file changed"
+npx lint-staged

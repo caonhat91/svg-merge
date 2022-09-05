@@ -1,5 +1,13 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "WARNING: prepare-commit-msg hook, format all file changed"
-npx lint-staged
+echo "WARNING: prepare-commit-msg hook, validate commit message"
+
+COMMIT_MSG=$(cat "$1")
+PREFIX_MSG="feat|feature|fix|hotfix"
+REGEX_MSG="^($PREFIX_MSG)"
+
+if ! [[ $COMMIT_MSG =~ $REGEX_MSG ]]; then
+    echo "Please change commit message with '($PREFIX_MSG) <description>' syntax"
+    exit 1;
+fi

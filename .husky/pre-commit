@@ -1,12 +1,13 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "WARNING: pre-commit hook, validate branch and commit message"
+echo "WARNING: pre-commit hook, validate branch name"
+
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 PREFIX_BRANCH="feature|fix|hotfix|alpha|staging|uat|release"
-REGEX="^($PREFIX_BRANCH)"
+REGEX_BRANCH="^($PREFIX_BRANCH)"
 
-if ! [[ $BRANCH =~ $REGEX ]]; then
-    echo "Please rename your branch with '($PREFIX_BRANCH)/<msg>' syntax"
+if ! [[ $BRANCH =~ $REGEX_BRANCH ]]; then
+    echo "Please rename your branch with '($PREFIX_BRANCH)/<module name>' syntax"
     exit 1;
 fi
