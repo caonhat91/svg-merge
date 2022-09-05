@@ -4,5 +4,5 @@
 echo "WARNING: prepare-commit-msg hook, validate msg"
 COMMIT_MSG=$(cat "$1")
 COMMIT_SOURCE=$2
-head="$(git rev-parse --verify HEAD)"
-echo "$head"
+branch=$(git rev-parse --symbolic --abbrev-ref $1)
+echo $branch
